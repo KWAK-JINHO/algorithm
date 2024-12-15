@@ -17,10 +17,10 @@ public class Main {
         for(int i = count - 1; i >= 0; i--) {
             int num = value/arr[i];
             
-            if(num > 0) { 
+            
                 answer += num;
                 value -= arr[i]*num;
-            }
+            
         }
         System.out.println(answer);
     }
