@@ -1,23 +1,9 @@
-코테 문제 풀고 풀이 올리는 레포입니다.
+백준, 프로그래머스, LeetCode를 풀고나서 올리는 repository 입니다!
+
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=wlsgh2018)](https://solved.ac/wlsgh2018/)
 
 
-```
-📂 /root
-├────  📂 문제/
-│      ├──── 📂 이름/
-│      │     ├──── problem.java
-│      │     ├──── README.md
-```
-
-- problem.java 소스코드
-- README.md 해설
-
-
-## Git Tip
-- 각 팀원이 개별 폴더를 사용해서 파일이 충돌할 경우가 거의 없기 때문에 push하기 전에 항상 rebase를 하면 좋음.
-- `git config --pull.rebase true` 설정을 통해 pull 시 자동으로 rebase를 할 수 있음.
-
-
+LeetCode
 ---
 ### 문자열 처리
 - [001-유효한 팰린드롬](https://leetcode.com/problems/valid-palindrome/)
