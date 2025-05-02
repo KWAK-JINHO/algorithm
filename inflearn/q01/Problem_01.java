@@ -1,6 +1,8 @@
+package q01;
+
 import java.util.Scanner;
 
-public class Main {
+public class Problem_01 {
     public int solution(String str, char t) {
         int answer = 0;
         str = str.toUpperCase(); // 대소문자를 구분하지 않기 때문에
@@ -18,7 +20,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        Problem_01 T = new Problem_01();
         Scanner kb = new Scanner(System.in);
         String str = kb.next(); // 문자열을 하나 받는다.
         char c = kb.next().charAt(0); // 문자열을 받아서 첫번째 인덱스를 c에 할당
