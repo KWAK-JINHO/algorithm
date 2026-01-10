@@ -34,22 +34,61 @@ import java.util.Scanner;
 //    }
 //}
 
+//public class Problem_02 {
+//    public static String solution(String str) {
+//        String answer = "";
+//        for (int i = 0; i <str.length(); i++) {
+//            if (Character.isUpperCase(str.charAt(i))) {
+//                answer += Character.toLowerCase((str.charAt(i)));
+//            } else {
+//                answer += Character.toUpperCase((str.charAt(i)));
+//            }
+//        }
+//        return answer;
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        String str = sc.next();
+//        System.out.println(solution(str));
+//    }
+//}
+
 public class Problem_02 {
-    public static String solution(String str) {
-        String answer = "";
-        for (int i = 0; i <str.length(); i++) {
-            if (Character.isUpperCase(str.charAt(i))) {
-                answer += Character.toLowerCase((str.charAt(i)));
-            } else {
-                answer += Character.toUpperCase((str.charAt(i)));
-            }
-        }
-        return answer;
-    }
+//    public static void main(String[] args) {
+//        Scanner in = new Scanner(System.in);
+//        String input1 = in.nextLine();
+//        String answer = solution(input1);
+//        System.out.println(answer);
+//        in.close();
+//    }
+//
+//    public static String solution(String input1) {
+//        char[] result = new char[input1.length()];
+//        char[] charArray = input1.toCharArray();
+//
+//        for (int i = 0; i < input1.length(); i++) {
+//            if (Character.isLowerCase(charArray[i])) result[i] = Character.toUpperCase(charArray[i]);
+//            else result[i] = Character.toLowerCase(charArray[i]);
+//        }
+//        return String.valueOf(result);
+//    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        System.out.println(solution(str));
+        String input = sc.nextLine();
+        System.out.println(solution(input));
     }
+
+    private static String solution(String input) {
+        char[] result = input.toCharArray();
+
+        for (int i = 0; i < result.length; i++) {
+            if (Character.isUpperCase(result[i])) result[i] = Character.toLowerCase(result[i]);
+            else result[i] = Character.toUpperCase(result[i]);
+        }
+        return String.valueOf(result);
+    }
+
+    // 문자열은 영어로만 이루어져있는지 공백이 들어올 수 있는지에 대해서 고민을 안했음
 }
