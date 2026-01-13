@@ -85,17 +85,32 @@ public class Problem_03 {
         String input = sc.nextLine();
         System.out.println(solution(input));
     }
+//
+//    public static String solution(String input) {
+//        String[] arr = input.split(" ");
+//        int strLength = 0;
+//        int idx = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i].length() > strLength) {
+//                strLength = arr[i].length();
+//                idx = i;
+//            }
+//        }
+//        return arr[idx];
+//    }
 
-    public static String solution(String input) {
-        String[] arr = input.split(" ");
-        int strLength = 0;
-        int idx = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i].length() > strLength) {
-                strLength = arr[i].length();
-                idx = i;
+    public static String solution(String str) {
+        String answer = "";
+        int m = Integer.MIN_VALUE;
+        String[] s = str.split(" ");
+        for (String x : s) {
+            int len = x.length();
+            if (len > m) {
+                m = len;
+                answer = x;
             }
         }
-        return arr[idx];
+        return answer;
     }
+
 }
