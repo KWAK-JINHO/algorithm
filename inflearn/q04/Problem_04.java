@@ -84,41 +84,81 @@ import java.util.Scanner;
 //}
 
 public class Problem_04 {
-    public static String[] solution(String[] strArr) {
-        String[] result = new String[strArr.length];
+//    public static String[] solution(String[] strArr) {
+//        String[] result = new String[strArr.length];
+//
+//        for (int i = 0; i < strArr.length; i++) {
+//            char[] charArr = strArr[i].toCharArray();
+//            int lc = 0;
+//            int rc = strArr[i].length() - 1;
+//
+//            while (lc < rc) {
+//                char tmp = strArr[i].charAt(rc);
+//                charArr[rc] = charArr[lc];
+//                charArr[lc] = tmp;
+//                lc++;
+//                rc--;
+//            }
+//            result[i] = String.valueOf(charArr);
+//        }
+//        return result;
+//    }
+//
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        sc.nextLine();
+//
+//        String[] inputArr = new String[n];
+//
+//        for (int i = 0; i < n; i++) {
+//            inputArr[i] = sc.nextLine();
+//        }
+//
+//        String[] strArr = solution(inputArr);
+//
+//        for (String x : strArr) {
+//            System.out.println(x);
+//        }
+//    }
 
-        for (int i = 0; i < strArr.length; i++) {
-            char[] charArr = strArr[i].toCharArray();
-            int lc = 0;
-            int rc = strArr[i].length() - 1;
-
-            while (lc < rc) {
-                char tmp = strArr[i].charAt(rc);
-                charArr[rc] = charArr[lc];
-                charArr[lc] = tmp;
-                lc++;
-                rc--;
-            }
-            result[i] = String.valueOf(charArr);
-        }
-        return result;
-    }
-
+    /* 조건
+    입력값: 첫줄; 자연수 두번째줄 ~ N개; N개의 영어 알파벳 단어
+    출력 입력된 단어를 뒤집어 놓은 단어 */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int inputInt = sc.nextInt();
         sc.nextLine();
+        String[] inputWords = new String[inputInt];
+        for (int i = 0; i < inputInt; i++) {
+            inputWords[i] = sc.nextLine();
+        }
 
-        String[] inputArr = new String[n];
+        String[] result = solution(inputInt, inputWords);
+        for (int i = 0; i < result.length ; i++) {
+            System.out.println(result[i]);
+        }
+
+    }
+
+    public static String[] solution(int n, String[] words) {
+        String[] result = new String[n];
 
         for (int i = 0; i < n; i++) {
-            inputArr[i] = sc.nextLine();
-        }
+            String word = words[i];
 
-        String[] strArr = solution(inputArr);
+            char[] newArr = new char[word.length()];
+            int lc = 0;
+            int rc = word.length() - 1;
 
-        for (String x : strArr) {
-            System.out.println(x);
+            while (lc <= rc) {
+                newArr[lc] = word.toCharArray()[rc];
+                newArr[rc] = word.toCharArray()[lc];
+                lc ++;
+                rc --;
+            }
+            result[i] = String.valueOf(newArr);
         }
+        return result;
     }
 }
