@@ -141,23 +141,37 @@ public class Problem_04 {
 
     }
 
+//    public static String[] solution(int n, String[] words) {
+//        String[] result = new String[n];
+//
+//        for (int i = 0; i < n; i++) {
+//            char[] charArr = words[i].toCharArray();
+//            int lc = 0, rc = words[i].length() - 1;
+//
+////            char[] newArr = new char[word.length()];
+////            int lc = 0;
+////            int rc = word.length() - 1;
+//
+//            while (lc <= rc) {
+
+    /// /                newArr[lc] = word.toCharArray()[rc];
+    /// /                newArr[rc] = word.toCharArray()[lc];
+//                char tmp = charArr[lc];
+//                charArr[lc] = charArr[rc];
+//                charArr[rc] = tmp;
+//                lc ++;
+//                rc --;
+//            }
+//            result[i] = String.valueOf(charArr);
+//        }
+//        return result;
+//    }
+
+    // stringbuilder를 사용
     public static String[] solution(int n, String[] words) {
         String[] result = new String[n];
-
         for (int i = 0; i < n; i++) {
-            String word = words[i];
-
-            char[] newArr = new char[word.length()];
-            int lc = 0;
-            int rc = word.length() - 1;
-
-            while (lc <= rc) {
-                newArr[lc] = word.toCharArray()[rc];
-                newArr[rc] = word.toCharArray()[lc];
-                lc ++;
-                rc --;
-            }
-            result[i] = String.valueOf(newArr);
+            result[i] = new StringBuilder(words[i]).reverse().toString();
         }
         return result;
     }
